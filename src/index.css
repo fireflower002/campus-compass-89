@@ -2,95 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Student Attendance & Notes Manager Design System */
 
 @layer base {
   :root {
+    /* Core Colors - Blue & Teal Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 220 14% 9%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 14% 9%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
+    --popover-foreground: 220 14% 9%;
+    
+    /* Primary Blue (#2563EB) */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 217 91% 55%;
+    --primary-light: 217 91% 90%;
+    
+    /* Secondary Teal (#14B8A6) */
+    --secondary: 173 80% 40%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 173 80% 35%;
+    --secondary-light: 173 80% 90%;
+    
+    /* Background shades */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 220 14% 9%;
+    
+    /* Success & Error */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --error: 0 84% 60%;
+    --error-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+    --radius: 1rem;
+    
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 220 14% 9%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 220 14% 9%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(173 80% 40%), hsl(173 80% 35%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-
+  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 14% 9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 220 13% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 14% 9%;
+    
+    --secondary: 173 80% 40%;
+    --secondary-foreground: 220 14% 9%;
+    
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 11% 65%;
+    
+    --accent: 215 28% 17%;
+    --accent-foreground: 0 0% 98%;
+    
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 217 91% 60%;
+    
+    --sidebar-background: 220 14% 9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 220 14% 9%;
+    --sidebar-accent: 215 28% 17%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -98,8 +114,101 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Classes */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+  
+  .heading-xl {
+    @apply text-2xl font-poppins font-bold;
+  }
+  
+  .heading-lg {
+    @apply text-xl font-poppins font-semibold;
+  }
+  
+  .heading-md {
+    @apply text-lg font-poppins font-medium;
+  }
+  
+  .body-text {
+    @apply text-base font-roboto;
+  }
+  
+  .small-text {
+    @apply text-sm font-roboto;
+  }
+}
+
+@layer components {
+  /* Card Components */
+  .card-base {
+    @apply bg-card text-card-foreground rounded-2xl border border-border/50 shadow-md transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .card-interactive {
+    @apply cursor-pointer hover:shadow-xl hover:-translate-y-1 hover:border-primary/20;
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-hover rounded-lg px-4 py-2 font-medium transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary-hover rounded-lg px-4 py-2 font-medium transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-4 py-2 font-medium transition-all;
+  }
+  
+  /* Progress Bars */
+  .progress-primary {
+    @apply bg-primary-light rounded-full overflow-hidden;
+  }
+  
+  .progress-fill-primary {
+    @apply bg-primary h-full transition-all duration-500 ease-out;
+  }
+  
+  .progress-secondary {
+    @apply bg-secondary-light rounded-full overflow-hidden;
+  }
+  
+  .progress-fill-secondary {
+    @apply bg-secondary h-full transition-all duration-500 ease-out;
+  }
+  
+  /* Navigation */
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2 rounded-lg transition-colors hover:bg-accent text-foreground/80 hover:text-foreground;
+  }
+  
+  .nav-item-active {
+    @apply bg-primary text-primary-foreground hover:bg-primary-hover;
+  }
+  
+  /* Attendance Status */
+  .status-present {
+    @apply bg-success text-success-foreground;
+  }
+  
+  .status-absent {
+    @apply bg-error text-error-foreground;
+  }
+  
+  .status-pending {
+    @apply bg-warning text-warning-foreground;
   }
 }
